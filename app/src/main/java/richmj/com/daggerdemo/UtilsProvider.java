@@ -8,8 +8,4 @@ import dagger.Provides;
  */
 @Module
 public class UtilsProvider {
-    @Provides
-    ILogUtil providerILogUtil(Object object) {
-        return new LogUtil(object);
-    }
 }

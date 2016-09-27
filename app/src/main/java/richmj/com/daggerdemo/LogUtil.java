@@ -1,5 +1,7 @@
 package richmj.com.daggerdemo;
 
+import javax.inject.Inject;
+
 /**
  * Created by 张磊 on 2016/9/27.
  */
@@ -7,6 +9,7 @@ public class LogUtil implements ILogUtil {
     private Object object;
     private String className;
 
+    @Inject
     public LogUtil(Object object) {
         this.object = object;
         this.className = object.getClass().getName();
