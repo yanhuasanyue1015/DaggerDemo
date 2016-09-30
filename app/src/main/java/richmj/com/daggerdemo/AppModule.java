@@ -23,4 +23,9 @@ public class AppModule {
     Application providesApplication() {
         return application;
     }
+    @Provides
+    @Singleton
+    IViewUtil provideIViewUtil(){
+        return new ViewUtil();
+    }
 }

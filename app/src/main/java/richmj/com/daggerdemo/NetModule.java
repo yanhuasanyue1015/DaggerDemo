@@ -8,6 +8,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -42,6 +43,14 @@ public class NetModule {
         return cache;
     }
 
+
+    @Provides
+    @Singleton
+    OkHttpClient provideOkHttpClient(Cache cache) {
+        return new OkHttpClient.Builder().build();
+    }
+
+
     @Provides
     @Singleton
     Gson provideGson() {
@@ -57,7 +66,7 @@ public class NetModule {
                 addConverterFactory(GsonConverterFactory.create(gson)).
                 baseUrl(baseUrl).
                 client(okHttpClient).
-                 build();
+                build();
         return retrofit;
     }
 }

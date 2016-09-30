@@ -1,18 +1,19 @@
 package richmj.com.daggerdemo;
 
+import android.util.Log;
+
 import javax.inject.Inject;
 
 /**
- * Created by 张磊 on 2016/9/27.
+ * Created by zhanglei-account on 2016/9/28.
  */
+
 public class LogUtil implements ILogUtil {
-    private Object object;
-    private String className;
+    private String Tag;
 
     @Inject
-    public LogUtil(Object object) {
-        this.object = object;
-        this.className = object.getClass().getName();
+    public LogUtil(String tag) {
+        Tag = tag;
     }
 
     @Override
@@ -21,17 +22,7 @@ public class LogUtil implements ILogUtil {
     }
 
     @Override
-    public void e(String mes) {
-
-    }
-
-    @Override
     public void d(String mes) {
-
-    }
-
-    @Override
-    public void w(String mes) {
 
     }
 }
